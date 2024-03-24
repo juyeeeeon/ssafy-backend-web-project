@@ -1,0 +1,28 @@
+body{
+  background-image: url("../assets/b2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+background-attachment: fixed;
+}
+
+#tripImg{
+  width: 300px;
+  margin: auto;
+}
+
+#movie-player-wrapper {
+	position: relative;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.26%;
+}
+
+#movie-player-wrapper .wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
