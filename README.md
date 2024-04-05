@@ -23,7 +23,7 @@ Front-End와 DB, Back-End를 **_MVC패턴_**을 적용하여 구현하였습니�
 
 ### 📝 ERD Diagram
 
-![database](/imgs/ERD_Diagram.jpg)
+![database](/imgs/006.jpg)
 
 ## 📝 Features
 
