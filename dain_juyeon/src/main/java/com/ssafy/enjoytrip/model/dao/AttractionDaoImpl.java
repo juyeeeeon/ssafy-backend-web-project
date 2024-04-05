@@ -93,52 +93,52 @@ public class AttractionDaoImpl implements AttractionDao {
 		return list;
 	}
 
-	@Override
-	public List<AttractionInfoDto> searchByTitle(String title, int sidoCode) {
-		DBUtil instance = DBUtil.getInstance();
-		List<AttractionInfoDto> list = new ArrayList<AttractionInfoDto>();
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-
-		try {
-			conn = instance.getConnection();
-			String sql = "select * from attraction_info where title like '%" + title + "%'";
-
-			if (sidoCode != 0) {
-				sql += " and sido_code = " + sidoCode;
-			}
-
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-
-			while (rs.next()) {
-				AttractionInfoDto att = new AttractionInfoDto();
-				att.setContentId(rs.getInt("content_id"));
-				att.setContentTypeId(rs.getInt("content_type_id"));
-				att.setTitle(rs.getString("title"));
-				att.setAddr1(rs.getString("addr1"));
-				att.setAddr2(rs.getString("addr2"));
-				att.setZipcode(rs.getString("zipcode"));
-				att.setTel(rs.getString("tel"));
-				att.setFirstImage(rs.getString("first_image"));
-				att.setFirstImage2(rs.getString("first_image2"));
-				att.setReadcount(rs.getInt("readcount"));
-				att.setSidoCode(rs.getInt("sido_code"));
-				att.setGugunCode(rs.getInt("gugun_code"));
-				att.setLatitude(rs.getDouble("latitude"));
-				att.setLongitude(rs.getDouble("longitude"));
-				att.setMlevel(rs.getString("mlevel"));
-
-				list.add(att);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			instance.close(rs, pstmt, conn);
-		}
-
-		return list;
-	}
+//	@Override
+//	public List<AttractionInfoDto> searchByTitle(String title, int sidoCode) {
+//		DBUtil instance = DBUtil.getInstance();
+//		List<AttractionInfoDto> list = new ArrayList<AttractionInfoDto>();
+//		Connection conn = null;
+//		PreparedStatement pstmt = null;
+//		ResultSet rs = null;
+//
+//		try {
+//			conn = instance.getConnection();
+//			String sql = "select * from attraction_info where title like '%" + title + "%'";
+//
+//			if (sidoCode != 0) {
+//				sql += " and sido_code = " + sidoCode;
+//			}
+//
+//			pstmt = conn.prepareStatement(sql);
+//			rs = pstmt.executeQuery();
+//
+//			while (rs.next()) {
+//				AttractionInfoDto att = new AttractionInfoDto();
+//				att.setContentId(rs.getInt("content_id"));
+//				att.setContentTypeId(rs.getInt("content_type_id"));
+//				att.setTitle(rs.getString("title"));
+//				att.setAddr1(rs.getString("addr1"));
+//				att.setAddr2(rs.getString("addr2"));
+//				att.setZipcode(rs.getString("zipcode"));
+//				att.setTel(rs.getString("tel"));
+//				att.setFirstImage(rs.getString("first_image"));
+//				att.setFirstImage2(rs.getString("first_image2"));
+//				att.setReadcount(rs.getInt("readcount"));
+//				att.setSidoCode(rs.getInt("sido_code"));
+//				att.setGugunCode(rs.getInt("gugun_code"));
+//				att.setLatitude(rs.getDouble("latitude"));
+//				att.setLongitude(rs.getDouble("longitude"));
+//				att.setMlevel(rs.getString("mlevel"));
+//
+//				list.add(att);
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		} finally {
+//			instance.close(rs, pstmt, conn);
+//		}
+//
+//		return list;
+//	}
 
 }

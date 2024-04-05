@@ -19,14 +19,17 @@ public class AttractionServiceImpl implements AttractionService {
 		return instance;
 	}
 
+	/**
+	 * 검색결과
+	 */
 	@Override
 	public List<AttractionInfoDto> attractionList(AttractionInfoDto attractionInfoDto) {
 		return attractionDao.attractionList(attractionInfoDto);
 	}
 
-	@Override
-	public List<AttractionInfoDto> searchByTitle(String title, int sidoCode) {
-		return attractionDao.searchByTitle(title, sidoCode);
-	}
+	/*
+	 * @Override public List<AttractionInfoDto> searchByTitle(String title, int
+	 * sidoCode) { return attractionDao.searchByTitle(title, sidoCode); }
+	 */
 
 }

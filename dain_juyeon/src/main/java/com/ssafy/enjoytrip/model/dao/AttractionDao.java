@@ -8,6 +8,6 @@ public interface AttractionDao {
 
 	List<AttractionInfoDto> attractionList(AttractionInfoDto attractionInfoDto);
 
-	List<AttractionInfoDto> searchByTitle(String title, int sidoCode);
+//	List<AttractionInfoDto> searchByTitle(String title, int sidoCode);
 
 }
